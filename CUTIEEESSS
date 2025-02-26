@@ -1,0 +1,216 @@
+from enum import Enum
+
+# Enum for Delivery Method
+class DeliveryMethod(Enum):
+    COURIER = "Courier"
+    EXPRESS = "Express"
+    STANDARD = "Standard"
+
+# Enum for Order Status
+class OrderStatus(Enum):
+    PENDING = "Pending"
+    SHIPPED = "Shipped"
+    DELIVERED = "Delivered"
+    CANCELLED = "Cancelled"
+
+# Class Customer
+class Customer:
+    def __init__(self, customerId, name, email, phoneNumber, address, orderHistory):
+        self.__customerId = customerId
+        self.__name = name
+        self.__email = email
+        self.__phoneNumber = phoneNumber
+        self.__address = address
+        self.__orderHistory = orderHistory
+
+    # Getters and Setters
+    def getCustomerId(self): return self.__customerId
+    def setCustomerId(self, customerId): self.__customerId = customerId
+
+    def getName(self): return self.__name
+    def setName(self, name): self.__name = name
+
+    def getEmail(self): return self.__email
+    def setEmail(self, email): self.__email = email
+
+    def getPhoneNumber(self): return self.__phoneNumber
+    def setPhoneNumber(self, phoneNumber): self.__phoneNumber = phoneNumber
+
+    def getAddress(self): return self.__address
+    def setAddress(self, address): self.__address = address
+
+    def getOrderHistory(self): return self.__orderHistory
+    def setOrderHistory(self, orderHistory): self.__orderHistory = orderHistory
+
+    def displayCustomerInfo(self):
+        print(f"Customer: {self.__name}, Email: {self.__email}, Phone: {self.__phoneNumber}")
+
+# Class Admin
+class Admin:
+    def __init__(self, adminId, name, email, phoneNumber, yearOfExperience, managedOrders):
+        self.__adminId = adminId
+        self.__name = name
+        self.__email = email
+        self.__phoneNumber = phoneNumber
+        self.__yearOfExperience = yearOfExperience
+        self.__managedOrders = managedOrders
+
+    # Getters and Setters
+    def getAdminId(self): return self.__adminId
+    def setAdminId(self, adminId): self.__adminId = adminId
+
+    def getName(self): return self.__name
+    def setName(self, name): self.__name = name
+
+    def getEmail(self): return self.__email
+    def setEmail(self, email): self.__email = email
+
+    def getPhoneNumber(self): return self.__phoneNumber
+    def setPhoneNumber(self, phoneNumber): self.__phoneNumber = phoneNumber
+
+    def getYearOfExperience(self): return self.__yearOfExperience
+    def setYearOfExperience(self, yearOfExperience): self.__yearOfExperience = yearOfExperience
+
+    def getManagedOrders(self): return self.__managedOrders
+    def setManagedOrders(self, managedOrders): self.__managedOrders = managedOrders
+
+    def displayAdminInfo(self):
+        print(f"Admin: {self.__name}, Experience: {self.__yearOfExperience} years")
+
+# Class Delivery Staff
+class DeliveryStaff:
+    def __init__(self, staffId, name, email, phoneNumber, assignedDeliveries, status):
+        self.__staffId = staffId
+        self.__name = name
+        self.__email = email
+        self.__phoneNumber = phoneNumber
+        self.__assignedDeliveries = assignedDeliveries
+        self.__status = status
+
+    # Getters and Setters
+    def getStaffId(self): return self.__staffId
+    def setStaffId(self, staffId): self.__staffId = staffId
+
+    def getName(self): return self.__name
+    def setName(self, name): self.__name = name
+
+    def getEmail(self): return self.__email
+    def setEmail(self, email): self.__email = email
+
+    def getPhoneNumber(self): return self.__phoneNumber
+    def setPhoneNumber(self, phoneNumber): self.__phoneNumber = phoneNumber
+
+    def getAssignedDeliveries(self): return self.__assignedDeliveries
+    def setAssignedDeliveries(self, assignedDeliveries): self.__assignedDeliveries = assignedDeliveries
+
+    def getStatus(self): return self.__status
+    def setStatus(self, status): self.__status = status
+
+    def displayStaffInfo(self):
+        print(f"Delivery Staff: {self.__name}, Status: {self.__status}")
+
+# Class Order
+class Order:
+    def __init__(self, orderId, customerId, items, totalPrice, orderStatus, placedDate):
+        self.__orderId = orderId
+        self.__customerId = customerId
+        self.__items = items
+        self.__totalPrice = totalPrice
+        self.__orderStatus = orderStatus
+        self.__placedDate = placedDate
+
+    # Getters and Setters
+    def getOrderId(self): return self.__orderId
+    def setOrderId(self, orderId): self.__orderId = orderId
+
+    def getCustomerId(self): return self.__customerId
+    def setCustomerId(self, customerId): self.__customerId = customerId
+
+    def getItems(self): return self.__items
+    def setItems(self, items): self.__items = items
+
+    def getTotalPrice(self): return self.__totalPrice
+    def setTotalPrice(self, totalPrice): self.__totalPrice = totalPrice
+
+    def getOrderStatus(self): return self.__orderStatus
+    def setOrderStatus(self, orderStatus): self.__orderStatus = orderStatus
+
+    def getPlacedDate(self): return self.__placedDate
+    def setPlacedDate(self, placedDate): self.__placedDate = placedDate
+
+    def displayOrderInfo(self):
+        print(f"Order {self.__orderId}: Status - {self.__orderStatus.value}, Total Price: {self.__totalPrice}")
+
+# Class Delivery Note
+class DeliveryNote:
+    def __init__(self, orderNumber, referenceNumber, deliveryDate, deliveryMethod, totalWeight, totalPrice):
+        self.__orderNumber = orderNumber
+        self.__referenceNumber = referenceNumber
+        self.__deliveryDate = deliveryDate
+        self.__deliveryMethod = deliveryMethod
+        self.__totalWeight = totalWeight
+        self.__totalPrice = totalPrice
+
+    # Getters and Setters
+    def getOrderNumber(self): return self.__orderNumber
+    def setOrderNumber(self, orderNumber): self.__orderNumber = orderNumber
+
+    def getReferenceNumber(self): return self.__referenceNumber
+    def setReferenceNumber(self, referenceNumber): self.__referenceNumber = referenceNumber
+
+    def getDeliveryDate(self): return self.__deliveryDate
+    def setDeliveryDate(self, deliveryDate): self.__deliveryDate = deliveryDate
+
+    def getDeliveryMethod(self): return self.__deliveryMethod
+    def setDeliveryMethod(self, deliveryMethod): self.__deliveryMethod = deliveryMethod
+
+    def getTotalWeight(self): return self.__totalWeight
+    def setTotalWeight(self, totalWeight): self.__totalWeight = totalWeight
+
+    def getTotalPrice(self): return self.__totalPrice
+    def setTotalPrice(self, totalPrice): self.__totalPrice = totalPrice
+
+    def displayDeliveryNote(self):
+        print(f"Delivery Note: Order {self.__orderNumber}, Method: {self.__deliveryMethod.value}, Total Weight: {self.__totalWeight} kg")
+
+  # Creating Customer Objects
+    customer1 = Customer("C101", "Alice Johnson", "alice@gmail.com", "+97112345678", "Downtown, Dubai", "Order History 1")
+    customer2 = Customer("C102", "Bob Smith", "bob@yahoo.com", "+97187654321", "Marina, Dubai", "Order History 2")
+  
+  # Creating Admin Objects
+    admin1 = Admin("A201", "Emma Watson", "emma@company.com", "+97111223344", 5, "Managed Orders 1")
+    admin2 = Admin("A202", "John Doe", "john@company.com", "+97155667788", 8, "Managed Orders 2")
+  
+  # Creating Delivery Staff Objects
+    staff1 = DeliveryStaff("S301", "Michael Brown", "michael@delivery.com", "+97133445566", "Delivery 1", "Active")
+    staff2 = DeliveryStaff("S302", "Sarah Green", "sarah@delivery.com", "+97177889900", "Delivery 2", "On Leave")
+  
+  # Creating Order Objects
+    order1 = Order("O401", "C101", "Laptop, Phone", 2500.00, OrderStatus.PENDING, "2025-03-01")
+    order2 = Order("O402", "C102", "Tablet, Headphones", 1500.00, OrderStatus.SHIPPED, "2025-03-02")
+  
+  # Creating Delivery Note Objects
+    deliveryNote1 = DeliveryNote("DN501", "REF123", "2025-03-05", DeliveryMethod.COURIER, 5.0, 2500.00)
+    deliveryNote2 = DeliveryNote("DN502", "REF456", "2025-03-06", DeliveryMethod.EXPRESS, 3.0, 1500.00)
+  
+  # Displaying Object Information
+    print("\n--- Customer Information ---")
+    customer1.displayCustomerInfo()
+    customer2.displayCustomerInfo()
+  
+    print("\n--- Admin Information ---")
+    admin1.displayAdminInfo()
+    admin2.displayAdminInfo()
+    
+    print("\n--- Delivery Staff Information ---")
+    staff1.displayStaffInfo()
+    staff2.displayStaffInfo()
+    
+    print("\n--- Order Information ---")
+    order1.displayOrderInfo()
+    order2.displayOrderInfo()
+    
+    print("\n--- Delivery Note Information ---")
+    deliveryNote1.displayDeliveryNote()
+    deliveryNote2.displayDeliveryNote()
+    
