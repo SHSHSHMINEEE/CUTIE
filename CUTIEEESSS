@@ -63,9 +63,8 @@ class Customer:
     def setOrderHistory(self, orderHistory): 
         self.__orderHistory = orderHistory
 
-    def addOrderHistory(self, order):         # Adds an order to the customer's order history
-        self.__orderHistory.append(order)
-        return "Order added to history."
+    def addOrderHistory(self, order): # Adds an order to the customer's order history
+        pass
 
     def displayCustomerInfo(self): # Display's customers information
         print("-=Customer Information=-")
@@ -320,8 +319,8 @@ order2 = Order("O402", "C102", [
     ],4000, OrderStatus.DELIVERED, "2025-02-18")
   
 # Creating Delivery Note Objects
-deliveryNote1 = DeliveryNote("DN501", "REF123", "2025-02-22", DeliveryMethod.COURIER, 5.0, 5500.00)
-deliveryNote2 = DeliveryNote("DN502", "REF456", "2025-02-28", DeliveryMethod.EXPRESS, 3.0, 3500.00)
+deliveryNote1 = DeliveryNote("DN501", "REF123", "2025-02-22", DeliveryMethod.COURIER, 5.0, 8000.00)
+deliveryNote2 = DeliveryNote("DN502", "REF456", "2025-02-28", DeliveryMethod.EXPRESS, 3.0, 4000.00)
   
 # Displaying Details of the Created Object 
 print("---Object 1---")
