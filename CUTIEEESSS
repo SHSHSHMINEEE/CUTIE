@@ -172,7 +172,7 @@ class DeliveryStaff:
         pass
 
     def updateDeliveryStatus(self):         
-    # Updates the delivery status of an order if the newStatus is a valid DeliveryStatus enum
+    # Updates the delivery status of an order
         pass
 
     def displayStaffInfo(self): #Display's Staff information
