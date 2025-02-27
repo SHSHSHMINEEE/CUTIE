@@ -180,7 +180,7 @@ class DeliveryStaff:
         print(f"Deliver Staff's Name: {self.__name}")
         print(f"Email: {self.__email}")
         print(f"Phone: {self.__phoneNumber}")
-        print(f"Assigned delivieries: {self.__assignedDeliveries}")
+        print(f"Assigned deliveries: {self.__assignedDeliveries}")
         print(f"Status: {self.__status.value}")
 
 # Class Order
