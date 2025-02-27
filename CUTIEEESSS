@@ -13,6 +13,15 @@ class OrderStatus(Enum):
     DELIVERED = "Delivered"
     CANCELLED = "Cancelled"
 
+# Enum for Delivery Status
+class DeliveryStatus(Enum):
+    NOT_DISPATCHED = "Not Dispatched"
+    OUT_FOR_DELIVERY = "Out for Delivery"
+    DELIVERED = "Delivered"
+    FAILED_ATTEMPT = "Failed Attempt"
+    RETURNED = "Returned"
+    
+
 # Class Customer
 class Customer:
     def __init__(self, customerId, name, email, phoneNumber, address, orderHistory):
@@ -55,7 +64,12 @@ class Customer:
         self.__orderHistory = orderHistory
 
     def displayCustomerInfo(self):
-        print(f"Customer: {self.__name}, Email: {self.__email}, Phone: {self.__phoneNumber}, Address: {self.__address")
+        print("-=Customer Information=-")
+        print(f"Customer: {self.__name}")
+        print(f"Email: {self.__email}")
+        print(f"Phone: {self.__phoneNumber}")
+        print(f"Address: {self.__address}")
+        print(f"Order History: {self.__orderHistory}")
 
 # Class Admin
 class Admin:
@@ -99,7 +113,12 @@ class Admin:
         self.__managedOrders = managedOrders
 
     def displayAdminInfo(self):
-        print(f"Admin: {self.__name}, Experience: {self.__yearOfExperience} years")
+        print("-=Admin Information=-")
+        print(f"Admin: {self.__name}")
+        print(f"Email: {self.__email}")
+        print(f"Phone: {self.__phoneNumber}")
+        print(f"Experience { self.__yearOfExperience} years")
+        print(f"Orders: {self.__managedOrders}")
 
 # Class Delivery Staff
 class DeliveryStaff:
@@ -112,26 +131,43 @@ class DeliveryStaff:
         self.__status = status
 
     # Getters and Setters
-    def getStaffId(self): return self.__staffId
-    def setStaffId(self, staffId): self.__staffId = staffId
+    def getStaffId(self): 
+        return self.__staffId
+    def setStaffId(self, staffId): 
+        self.__staffId = staffId
 
-    def getName(self): return self.__name
-    def setName(self, name): self.__name = name
+    def getName(self): 
+        return self.__name
+    def setName(self, name): 
+        self.__name = name
 
-    def getEmail(self): return self.__email
-    def setEmail(self, email): self.__email = email
+    def getEmail(self): 
+        return self.__email
+    def setEmail(self, email): 
+        self.__email = email
 
-    def getPhoneNumber(self): return self.__phoneNumber
-    def setPhoneNumber(self, phoneNumber): self.__phoneNumber = phoneNumber
+    def getPhoneNumber(self): 
+        return self.__phoneNumber
+    def setPhoneNumber(self, phoneNumber): 
+        self.__phoneNumber = phoneNumber
 
-    def getAssignedDeliveries(self): return self.__assignedDeliveries
-    def setAssignedDeliveries(self, assignedDeliveries): self.__assignedDeliveries = assignedDeliveries
+    def getAssignedDeliveries(self): 
+        return self.__assignedDeliveries
+    def setAssignedDeliveries(self, assignedDeliveries): 
+        self.__assignedDeliveries = assignedDeliveries
 
-    def getStatus(self): return self.__status
-    def setStatus(self, status): self.__status = status
+    def getStatus(self): 
+        return self.__status
+    def setStatus(self, status): 
+        self.__status = status
 
     def displayStaffInfo(self):
-        print(f"Delivery Staff: {self.__name}, Status: {self.__status}")
+        print("-=Deliver Staff Information=-")
+        print(f"Deliver Staff's Name: {self.__name}")
+        print(f"Email: {self.__email}")
+        print(f"Phone: {self.__phoneNumber}")
+        print(f"Assigned delivieries: {self.__assignedDeliveries}")
+        print(f"Status: {self.__status.value}")
 
 # Class Order
 class Order:
@@ -144,26 +180,44 @@ class Order:
         self.__placedDate = placedDate
 
     # Getters and Setters
-    def getOrderId(self): return self.__orderId
-    def setOrderId(self, orderId): self.__orderId = orderId
+    def getOrderId(self): 
+        return self.__orderId
+    def setOrderId(self, orderId): 
+        self.__orderId = orderId
 
-    def getCustomerId(self): return self.__customerId
-    def setCustomerId(self, customerId): self.__customerId = customerId
+    def getCustomerId(self): 
+        return self.__customerId
+    def setCustomerId(self, customerId): 
+        self.__customerId = customerId
 
-    def getItems(self): return self.__items
-    def setItems(self, items): self.__items = items
+    def getItems(self): 
+        return self.__items
+    def setItems(self, items): 
+        self.__items = items
 
-    def getTotalPrice(self): return self.__totalPrice
-    def setTotalPrice(self, totalPrice): self.__totalPrice = totalPrice
+    def getTotalPrice(self): 
+        return self.__totalPrice
+    def setTotalPrice(self, totalPrice): 
+        self.__totalPrice = totalPrice
 
-    def getOrderStatus(self): return self.__orderStatus
-    def setOrderStatus(self, orderStatus): self.__orderStatus = orderStatus
+    def getOrderStatus(self): 
+        return self.__orderStatus
+    def setOrderStatus(self, orderStatus): 
+        self.__orderStatus = orderStatus
 
-    def getPlacedDate(self): return self.__placedDate
-    def setPlacedDate(self, placedDate): self.__placedDate = placedDate
+    def getPlacedDate(self): 
+        return self.__placedDate
+    def setPlacedDate(self, placedDate): 
+        self.__placedDate = placedDate
 
     def displayOrderInfo(self):
-        print(f"Order {self.__orderId}: Status - {self.__orderStatus.value}, Total Price: {self.__totalPrice}")
+        print("-=Order Information=-")
+        print(f"Order ID: {self.__orderId}")
+        print(f"Customer ID: {self.__customerId}")
+        print(f"Items Purchased: {self.__items}")
+        print(f"Total Price: {self.__totalPrice} AED")
+        print(f"Order Status: {self.__orderStatus.value}")
+        print(f"Purchase Date: {self.__placedDate}")
 
 # Class Delivery Note
 class DeliveryNote:
@@ -176,65 +230,88 @@ class DeliveryNote:
         self.__totalPrice = totalPrice
 
     # Getters and Setters
-    def getOrderNumber(self): return self.__orderNumber
-    def setOrderNumber(self, orderNumber): self.__orderNumber = orderNumber
+    def getOrderNumber(self): 
+        return self.__orderNumber
+    def setOrderNumber(self, orderNumber): 
+        self.__orderNumber = orderNumber
 
-    def getReferenceNumber(self): return self.__referenceNumber
-    def setReferenceNumber(self, referenceNumber): self.__referenceNumber = referenceNumber
+    def getReferenceNumber(self): 
+        return self.__referenceNumber
+    def setReferenceNumber(self, referenceNumber): 
+        self.__referenceNumber = referenceNumber
 
-    def getDeliveryDate(self): return self.__deliveryDate
-    def setDeliveryDate(self, deliveryDate): self.__deliveryDate = deliveryDate
+    def getDeliveryDate(self): 
+        return self.__deliveryDate
+    def setDeliveryDate(self, deliveryDate): 
+        self.__deliveryDate = deliveryDate
 
-    def getDeliveryMethod(self): return self.__deliveryMethod
-    def setDeliveryMethod(self, deliveryMethod): self.__deliveryMethod = deliveryMethod
+    def getDeliveryMethod(self): 
+        return self.__deliveryMethod
+    def setDeliveryMethod(self, deliveryMethod): 
+        self.__deliveryMethod = deliveryMethod
 
-    def getTotalWeight(self): return self.__totalWeight
-    def setTotalWeight(self, totalWeight): self.__totalWeight = totalWeight
+    def getTotalWeight(self): 
+        return self.__totalWeight
+    def setTotalWeight(self, totalWeight): 
+        self.__totalWeight = totalWeight
 
-    def getTotalPrice(self): return self.__totalPrice
-    def setTotalPrice(self, totalPrice): self.__totalPrice = totalPrice
+    def getTotalPrice(self): 
+        return self.__totalPrice
+    def setTotalPrice(self, totalPrice): 
+        self.__totalPrice = totalPrice
 
     def displayDeliveryNote(self):
-        print(f"Delivery Note: Order {self.__orderNumber}, Method: {self.__deliveryMethod.value}, Total Weight: {self.__totalWeight} kg")
+        print("-=Delivery Note=-")
+        print(f"Order Number: {self.__orderNumber}")
+        print(f"Reference Number: {self.__referenceNumber}")
+        print(f"Delivery Date: {self.__deliveryDate}")
+        print(f"Delivery Method: {self.__deliveryMethod.value}")
+        print(f"Total Weight: {self.__totalWeight} Kg")
+        print(f"Total Price: {self.__totalPrice} AED")
 
   # Creating Customer Objects
-    customer1 = Customer("C101", "Alice Johnson", "alice@gmail.com", "+97112345678", "Downtown, Dubai", "Order History 1")
-    customer2 = Customer("C102", "Bob Smith", "bob@yahoo.com", "+97187654321", "Marina, Dubai", "Order History 2")
+    customer1 = Customer("C101", "Shamma Al Mansoori", "shamma.alm@gmail.com", "+971 50 124 6588", "Bain Al Jessrain, Abu Dhabi", "Order History 1")
+    customer2 = Customer("C102", "Mohammed Al Shamsi", "mohammed.als@yahoo.com", "+971 58 765 6771", "downtown, Dubai", "Order History 2")
   
   # Creating Admin Objects
-    admin1 = Admin("A201", "Emma Watson", "emma@company.com", "+97111223344", 5, "Managed Orders 1")
-    admin2 = Admin("A202", "John Doe", "john@company.com", "+97155667788", 8, "Managed Orders 2")
+    admin1 = Admin("A201", "Shoug Al Qubaisi", "shoug.alqq@company.com", "+971 50 112 2344", 5, "Managed Order 1")
+    admin2 = Admin("A202", "Shahad Al Marzooqi", "shamayel@company.com", "+971 50 111 2445", 8, "Managed Order 2")
   
   # Creating Delivery Staff Objects
-    staff1 = DeliveryStaff("S301", "Michael Brown", "michael@delivery.com", "+97133445566", "Delivery 1", "Active")
-    staff2 = DeliveryStaff("S302", "Sarah Green", "sarah@delivery.com", "+97177889900", "Delivery 2", "On Leave")
+    staff1 = DeliveryStaff("S301", "Tareq Abdulla", "tareq@delivery.com", "+971 58 334 5256", "Delivery 1", "Delivered")
+    staff2 = DeliveryStaff("S302", "Mohammed Rashid", "mohammed@delivery.com", "+971 55 783 8429", "Delivery 2", "Out for Delivery")
   
   # Creating Order Objects
-    order1 = Order("O401", "C101", "Laptop, Phone", 2500.00, OrderStatus.PENDING, "2025-03-01")
-    order2 = Order("O402", "C102", "Tablet, Headphones", 1500.00, OrderStatus.SHIPPED, "2025-03-02")
+    order1 = Order("O401", "C101", "Laptop, Phone", 5500.00, OrderStatus.Shipped, "2025-02-10")
+    order2 = Order("O402", "C102", "Tablet, Headphones", 3500.00, OrderStatus.Delivered, "2025-02-18")
   
   # Creating Delivery Note Objects
-    deliveryNote1 = DeliveryNote("DN501", "REF123", "2025-03-05", DeliveryMethod.COURIER, 5.0, 2500.00)
-    deliveryNote2 = DeliveryNote("DN502", "REF456", "2025-03-06", DeliveryMethod.EXPRESS, 3.0, 1500.00)
+    deliveryNote1 = DeliveryNote("DN501", "REF123", "2025-02-22", DeliveryMethod.COURIER, 5.0, 5500.00)
+    deliveryNote2 = DeliveryNote("DN502", "REF456", "2025-02-28", DeliveryMethod.EXPRESS, 3.0, 3500.00)
   
-  # Displaying Object Information
-    print("\n--- Customer Information ---")
+  # Displaying Details od the Created Object 
+    print("---Object 1---")
+    print(" ")
     customer1.displayCustomerInfo()
-    customer2.displayCustomerInfo()
-  
-    print("\n--- Admin Information ---")
+    print(" ")
     admin1.displayAdminInfo()
-    admin2.displayAdminInfo()
-    
-    print("\n--- Delivery Staff Information ---")
+    print(" ")
     staff1.displayStaffInfo()
-    staff2.displayStaffInfo()
-    
-    print("\n--- Order Information ---")
+    print(" ")
     order1.displayOrderInfo()
-    order2.displayOrderInfo()
-    
-    print("\n--- Delivery Note Information ---")
+    print(" ")
     deliveryNote1.displayDeliveryNote()
+    print(" ")
+
+    print("---Object 2---")
+    print(" ")
+    customer2.displayCustomerInfo()
+    print(" ")
+    admin2.displayAdminInfo()
+    print(" ")
+    staff2.displayStaffInfo()
+    print(" ")
+    order2.displayOrderInfo()
+    print(" ")
     deliveryNote2.displayDeliveryNote()
     
