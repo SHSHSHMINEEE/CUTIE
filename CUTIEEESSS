@@ -20,7 +20,7 @@ class DeliveryStatus(Enum):
     DELIVERED = "Delivered"
     FAILED_ATTEMPT = "Failed Attempt"
     RETURNED = "Returned"
-    
+
 
 # Class Customer
 class Customer:
