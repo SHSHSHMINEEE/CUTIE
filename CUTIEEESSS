@@ -24,26 +24,38 @@ class Customer:
         self.__orderHistory = orderHistory
 
     # Getters and Setters
-    def getCustomerId(self): return self.__customerId
-    def setCustomerId(self, customerId): self.__customerId = customerId
+    def getCustomerId(self): 
+        return self.__customerId
+    def setCustomerId(self, customerId): 
+        self.__customerId = customerId
 
-    def getName(self): return self.__name
-    def setName(self, name): self.__name = name
+    def getName(self): 
+        return self.__name
+    def setName(self, name): 
+        self.__name = name
 
-    def getEmail(self): return self.__email
-    def setEmail(self, email): self.__email = email
+    def getEmail(self): 
+        return self.__email
+    def setEmail(self, email): 
+        self.__email = email
 
-    def getPhoneNumber(self): return self.__phoneNumber
-    def setPhoneNumber(self, phoneNumber): self.__phoneNumber = phoneNumber
+    def getPhoneNumber(self): 
+        return self.__phoneNumber
+    def setPhoneNumber(self, phoneNumber): 
+        self.__phoneNumber = phoneNumber
 
-    def getAddress(self): return self.__address
-    def setAddress(self, address): self.__address = address
+    def getAddress(self): 
+        return self.__address
+    def setAddress(self, address): 
+        self.__address = address
 
-    def getOrderHistory(self): return self.__orderHistory
-    def setOrderHistory(self, orderHistory): self.__orderHistory = orderHistory
+    def getOrderHistory(self): 
+        return self.__orderHistory
+    def setOrderHistory(self, orderHistory): 
+        self.__orderHistory = orderHistory
 
     def displayCustomerInfo(self):
-        print(f"Customer: {self.__name}, Email: {self.__email}, Phone: {self.__phoneNumber}")
+        print(f"Customer: {self.__name}, Email: {self.__email}, Phone: {self.__phoneNumber}, Address: {self.__address")
 
 # Class Admin
 class Admin:
@@ -56,23 +68,35 @@ class Admin:
         self.__managedOrders = managedOrders
 
     # Getters and Setters
-    def getAdminId(self): return self.__adminId
-    def setAdminId(self, adminId): self.__adminId = adminId
+    def getAdminId(self): 
+        return self.__adminId
+    def setAdminId(self, adminId): 
+        self.__adminId = adminId
 
-    def getName(self): return self.__name
-    def setName(self, name): self.__name = name
+    def getName(self): 
+        return self.__name
+    def setName(self, name): 
+        self.__name = name
 
-    def getEmail(self): return self.__email
-    def setEmail(self, email): self.__email = email
+    def getEmail(self): 
+        return self.__email
+    def setEmail(self, email): 
+        self.__email = email
 
-    def getPhoneNumber(self): return self.__phoneNumber
-    def setPhoneNumber(self, phoneNumber): self.__phoneNumber = phoneNumber
+    def getPhoneNumber(self): 
+        return self.__phoneNumber
+    def setPhoneNumber(self, phoneNumber): 
+        self.__phoneNumber = phoneNumber
 
-    def getYearOfExperience(self): return self.__yearOfExperience
-    def setYearOfExperience(self, yearOfExperience): self.__yearOfExperience = yearOfExperience
+    def getYearOfExperience(self): 
+        return self.__yearOfExperience
+    def setYearOfExperience(self, yearOfExperience): 
+        self.__yearOfExperience = yearOfExperience
 
-    def getManagedOrders(self): return self.__managedOrders
-    def setManagedOrders(self, managedOrders): self.__managedOrders = managedOrders
+    def getManagedOrders(self): 
+        return self.__managedOrders
+    def setManagedOrders(self, managedOrders): 
+        self.__managedOrders = managedOrders
 
     def displayAdminInfo(self):
         print(f"Admin: {self.__name}, Experience: {self.__yearOfExperience} years")
