@@ -323,7 +323,7 @@ order2 = Order("O402", "C102", [
 deliveryNote1 = DeliveryNote("DN501", "REF123", "2025-02-22", DeliveryMethod.COURIER, 5.0, 5500.00)
 deliveryNote2 = DeliveryNote("DN502", "REF456", "2025-02-28", DeliveryMethod.EXPRESS, 3.0, 3500.00)
   
-# Displaying Details od the Created Object 
+# Displaying Details of the Created Object 
 print("---Object 1---")
 print(" ")
 customer1.displayCustomerInfo()
